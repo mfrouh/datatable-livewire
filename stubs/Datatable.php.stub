@@ -1,0 +1,61 @@
+<?php
+
+namespace DummyNamespace;
+
+use MFrouh\DataTable\Datatables\Datatables;
+
+class DummyClass extends Datatables
+{
+    /**
+     * add model
+     * ex public $model = 'App\Models\User';
+     * ex public $model = User::class,
+     */
+    public $model = '';
+
+    /**
+     * query builder
+     */
+    public function queryBuilder()
+    {
+        return $this->model::query();
+    }
+
+    /**
+     * 'method_name or route()' => 'permission',
+     *  ex  'create' => 'create post',
+     */
+    public array $tablePermissions = [];
+
+    /**
+     * add columns in array
+     * columns available
+     * ['TextColumn','NumberColumn','ImageColumn','PriceColumn',
+     * 'DateTimeColumn','LabelColumn','LangColumn','MinuteColumn',
+     * 'PercentageColumn']
+     *
+     *  TextColumn::name('name')->label('label')->sortable()->searchable(),
+     *  NumberColumn::name('name')->label('label')->sortable()->searchable(),
+     *  MinuteColumn::name('name')->label('label')->sortable()->searchable(),
+     *  PercentageColumn::name('name')->label('label')->sortable()->searchable(),
+     *  LangColumn::name('name')->filename('filename')->label('label'),
+     *  DateTimeColumn::name('name')->format(format')->label('label')->sortable()->searchable(),
+     *
+     */
+    public function columns(): array
+    {
+        return [];
+    }
+
+    /**
+     * add actions in array
+     *  Action::header()->events(['action'  => 'label']),
+     *  Action::header()->urls(['action'  => 'label']),
+     *  Action::action()->events(['action'  => 'label']),
+     *  Action::action()->urls(['action' => 'label'])
+     */
+    public function actions(): array
+    {
+        return [];
+    }
+}
