@@ -28,11 +28,19 @@ php artisan make:datatable backend/user
 
 will be save in the folder App\Http\livewire\DataTables
 
+add in blade
+
+```
+@livewire('datatable.backend.user') for backend.user
+@livewire('datatable.admin.backend.user') for admin/backend/user
+```
+
 >backend\user  will be App\Http\livewire\DataTables\Backend\User.php
 >
 >backend.user  will be App\Http\livewire\DataTables\Backend\User.php
 > 
->user  will be App\Http\livewire\DataTables\User.php
+>user          will be App\Http\livewire\DataTables\User.php
+
 
 code datatable 
 ```
@@ -50,18 +58,22 @@ class User extends Datatables
      * add model
      */
     public $model = User::class;
+    
 
     /**
      * query builder
+     *
      */
     public function queryBuilder()
     {
         return $this->model::query();
     }
 
+
     /**
      * 'method_name or route()' => 'permission',
      *  ex  'create' => 'create post',
+     *
      */
     public array $tablePermissions = [];
 
@@ -73,6 +85,7 @@ class User extends Datatables
     {
         return [];
     }
+
 
     /**
      * add actions in array
