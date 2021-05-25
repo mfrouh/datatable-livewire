@@ -11,6 +11,7 @@ and [tailwind](https://tailwindcss.com)
 and [alpinejs](https://github.com/alpinejs/alpine)
 
 create livewire datatable
+
 >php artisan make:datatable user
 > 
 > or
@@ -30,8 +31,8 @@ will be save in the folder App\Http\livewire\DataTables
 >user  will be App\Http\livewire\DataTables\User.php
 
 code datatable 
-
-><?php
+```
+<?php
 
 namespace App\Http\Livewire\Datatables;
 
@@ -93,3 +94,4 @@ class User extends Datatables
         return [];
     }
 }
+```
