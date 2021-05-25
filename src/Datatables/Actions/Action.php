@@ -8,7 +8,7 @@ class Action
 
     public $actionUrls = [];
 
-    public $headerEvents = [];
+    public $headerEvents = [ ];
 
     public $headerUrls = [];
 
