@@ -2,7 +2,9 @@
 
 <p align="center" >Package DataTable Livewire </p>
 
-> composer require mfrouh/datatable-livewire
+```
+composer require mfrouh/datatable-livewire
+```
 
 This package was built using 
 [Laravel](https://laravel.com)
@@ -10,17 +12,19 @@ and [livewire](https://laravel-livewire.com)
 and [tailwind](https://tailwindcss.com)
 and [alpinejs](https://github.com/alpinejs/alpine)
 
-create livewire datatable
+Create Livewire DataTable
 
->php artisan make:datatable user
-> 
-> or
-> 
->php artisan make:datatable backend.user
-> 
-> or
->
->php artisan make:datatable backend\user
+```
+php artisan make:datatable user
+```
+
+```
+php artisan make:datatable backend.user
+```
+
+```
+php artisan make:datatable backend/user
+```
 
 will be save in the folder App\Http\livewire\DataTables
 
@@ -37,16 +41,15 @@ code datatable
 namespace App\Http\Livewire\Datatables;
 
 use MFrouh\DataTable\Datatables\Datatables;
+use App\Models\User;
 
 class User extends Datatables
 {
 
      /**
      * add model
-     * ex public $model = 'App\Models\User';
-     * ex public $model = User::class,
      */
-    public $model = '';
+    public $model = User::class;
 
     /**
      * query builder
@@ -64,17 +67,6 @@ class User extends Datatables
 
     /**
      * add columns in array
-     * columns available
-     * ['TextColumn','NumberColumn','ImageColumn','PriceColumn',
-     * 'DateTimeColumn','LabelColumn','LangColumn','MinuteColumn',
-     * 'PercentageColumn']
-     *
-     *  TextColumn::name('name')->label('label')->sortable()->searchable(),
-     *  NumberColumn::name('name')->label('label')->sortable()->searchable(),
-     *  MinuteColumn::name('name')->label('label')->sortable()->searchable(),
-     *  PercentageColumn::name('name')->label('label')->sortable()->searchable(),
-     *  LangColumn::name('name')->filename('filename')->label('label'),
-     *  DateTimeColumn::name('name')->format(format')->label('label')->sortable()->searchable(),
      *
      */
     public function columns(): array
@@ -84,10 +76,7 @@ class User extends Datatables
 
     /**
      * add actions in array
-     *  Action::header()->events(['action'  => 'label']),
-     *  Action::header()->urls(['action'  => 'label']),
-     *  Action::action()->events(['action'  => 'label']),
-     *  Action::action()->urls(['action' => 'label'])
+     *
      */
     public function actions(): array
     {
