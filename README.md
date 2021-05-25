@@ -2,8 +2,6 @@
 
 <p align="center" >Package DataTable Livewire </p>
 
-<<<<<<< HEAD
-
 > composer require mfrouh/datatable-livewire
 
 This package was built using 
@@ -95,6 +93,3 @@ class User extends Datatables
         return [];
     }
 }
-=======
-composer require mfrouh/datatable-livewire 
->>>>>>> eb13753cba442604fcc56d5e2c519127e238e02b
