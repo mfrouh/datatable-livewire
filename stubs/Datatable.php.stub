@@ -1,0 +1,47 @@
+<?php
+
+namespace DummyNamespace;
+
+use MFrouh\DataTable\Datatables\Datatables;
+
+class DummyClass extends Datatables
+{
+    /**
+     * add model
+     *
+     */
+    public $model = '';
+
+    /**
+     * query builder
+     */
+    public function queryBuilder()
+    {
+        return $this->model::query();
+    }
+
+    /**
+     *add permissions
+     *
+     */
+    public array $tablePermissions = [];
+
+    /**
+     * add columns in array
+     * columns available
+     *
+     */
+    public function columns(): array
+    {
+        return [];
+    }
+
+    /**
+     * add actions in array
+     *
+     */
+    public function actions(): array
+    {
+        return [];
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "mfrouh/datatable-livewire",
+    "description": "datatable livewire",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+    },
+    "autoload": {
+        "psr-4": {
+            "MFrouh\\DataTable\\" :"src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+           "MFrouh\\DataTable\\Tests\\" : "tests/"
+        }
+    },
+    "require-dev": {
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MFrouh\\DataTable\\Providers\\LivewireDatatableServiceProvider"
+            ]
+        }
+    }
+}
