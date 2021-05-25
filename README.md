@@ -6,7 +6,7 @@
 composer require mfrouh/datatable-livewire
 ```
 
-This package was built using 
+This package was built using
 [Laravel](https://laravel.com)
 and [livewire](https://laravel-livewire.com)
 and [tailwind](https://tailwindcss.com)
@@ -35,14 +35,14 @@ add in blade
 @livewire('datatable.admin.backend.user') for admin/backend/user
 ```
 
->backend\user  will be App\Http\livewire\DataTables\Backend\User.php
+> backend\user will be App\Http\livewire\DataTables\Backend\User.php
 >
->backend.user  will be App\Http\livewire\DataTables\Backend\User.php
-> 
->user          will be App\Http\livewire\DataTables\User.php
+> backend.user will be App\Http\livewire\DataTables\Backend\User.php
+>
+> user will be App\Http\livewire\DataTables\User.php
 
+code datatable
 
-code datatable 
 ```
 <?php
 
@@ -58,7 +58,7 @@ class User extends Datatables
      * add model
      */
     public $model = User::class;
-    
+
 
     /**
      * query builder
@@ -96,4 +96,38 @@ class User extends Datatables
         return [];
     }
 }
+```
+
+using actions like route or method in your component
+
+```
+  public function actions(): array
+  {
+        return [
+            Action::header()->events(['action'  => 'label']),
+            Action::header()->urls(['action'  => 'label']),
+            Action::action()->events(['action'  => 'label']),
+            Action::action()->urls(['action' => 'label'])
+        ];
+  }
+```
+
+using culomns like route or method in your component
+
+>['TextColumn','NumberColumn','ImageColumn','PriceColumn',
+>'DateTimeColumn','LabelColumn','LangColumn','MinuteColumn',
+>'PercentageColumn']
+
+```
+  public function columns(): array
+    {
+        return [
+           TextColumn::name('name')->label('label')->sortable()->searchable(),
+           NumberColumn::name('name')->label('label')->sortable()->searchable(),
+           MinuteColumn::name('name')->label('label')->sortable()->searchable(),
+           PercentageColumn::name('name')->label('label')->sortable()->searchable(),
+           LangColumn::name('name')->filename('filename')->label('label'),
+           DateTimeColumn::name('name')->format(format')->label('label')->sortable()->searchable(),
+        ];
+    }
 ```
