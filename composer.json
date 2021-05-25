@@ -8,12 +8,12 @@
     },
     "autoload": {
         "psr-4": {
-            "MFrouh\\DataTable\\" :"DataTableLivewire/src/"
+            "MFrouh\\DataTable\\" :"src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-           "MFrouh\\DataTable\\Tests\\" : "DataTableLivewire/tests/"
+           "MFrouh\\DataTable\\Tests\\" : "tests/"
         }
     },
     "require-dev": {
