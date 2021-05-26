@@ -2,7 +2,7 @@
 
 <p align="center" >Package DataTable Livewire </p>
 
-```
+```composer
 composer require mfrouh/datatable-livewire
 ```
 
@@ -14,15 +14,15 @@ and [alpinejs](https://github.com/alpinejs/alpine)
 
 Create Livewire DataTable
 
-```
+```php
 php artisan make:datatable user
 ```
 
-```
+```php
 php artisan make:datatable backend.user
 ```
 
-```
+```php
 php artisan make:datatable backend/user
 ```
 
@@ -30,7 +30,7 @@ will be save in the folder App\Http\livewire\DataTables
 
 add in blade
 
-```
+```blade
 @livewire('datatable.backend.user') for backend.user
 @livewire('datatable.admin.backend.user') for admin/backend/user
 ```
@@ -43,7 +43,7 @@ add in blade
 
 code datatable
 
-```
+```php
 <?php
 
 namespace App\Http\Livewire\Datatables;
@@ -100,7 +100,7 @@ class User extends Datatables
 
 using actions like route or method in your component
 
-```
+```php
   public function actions(): array
   {
         return [
@@ -118,7 +118,7 @@ using culomns like route or method in your component
 >'DateTimeColumn','LabelColumn','LangColumn','MinuteColumn',
 >'PercentageColumn']
 
-```
+```php
   public function columns(): array
     {
         return [
