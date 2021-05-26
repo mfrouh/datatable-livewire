@@ -112,7 +112,7 @@ class User extends Datatables
   }
 ```
 
-## Culomns
+## Columns
 
 >['TextColumn','NumberColumn','ImageColumn','PriceColumn',
 >'DateTimeColumn','LabelColumn','LangColumn','MinuteColumn',
