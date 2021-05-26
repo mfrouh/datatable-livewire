@@ -1,8 +1,8 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center" >Package DataTable Livewire </p>
+## Package DataTable Livewire
 
-```composer
+```
 composer require mfrouh/datatable-livewire
 ```
 
@@ -12,7 +12,7 @@ and [livewire](https://laravel-livewire.com)
 and [tailwind](https://tailwindcss.com)
 and [alpinejs](https://github.com/alpinejs/alpine)
 
-Create Livewire DataTable
+## Create Livewire DataTable
 
 ```php
 php artisan make:datatable user
@@ -28,7 +28,7 @@ php artisan make:datatable backend/user
 
 will be save in the folder App\Http\livewire\DataTables
 
-add in blade
+## Add In Blade
 
 ```blade
 @livewire('datatable.backend.user') for backend.user
@@ -41,7 +41,7 @@ add in blade
 >
 > user will be App\Http\livewire\DataTables\User.php
 
-code datatable
+## Code DataTable
 
 ```php
 <?php
@@ -98,7 +98,7 @@ class User extends Datatables
 }
 ```
 
-using actions like route or method in your component
+## Actions
 
 ```php
   public function actions(): array
@@ -112,7 +112,7 @@ using actions like route or method in your component
   }
 ```
 
-using culomns like route or method in your component
+## Culomns
 
 >['TextColumn','NumberColumn','ImageColumn','PriceColumn',
 >'DateTimeColumn','LabelColumn','LangColumn','MinuteColumn',
