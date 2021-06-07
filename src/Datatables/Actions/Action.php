@@ -4,14 +4,15 @@ namespace MFrouh\DataTable\Datatables\Actions;
 
 class Action
 {
-    public $actionEvents = [];
+    public $actionEvents;
 
-    public $actionUrls = [];
+    public $actionUrls;
 
-    public $headerEvents = [ ];
+    public $headerEvents;
 
-    public $headerUrls = [];
+    public $headerUrls;
 
+    public $label;
 
     public static function header()
     {
@@ -29,33 +30,32 @@ class Action
         return $action;
     }
 
-    public function events(array $events)
+    public function url($url)
     {
-        if ($this->type == 'header') {
-            $this->headerEvents = $events;
-
-            return $this;
-        }
-
         if ($this->type == 'action') {
-            $this->actionEvents = $events;
-
-            return $this;
+            $this->actionUrls = $url;
+        } else {
+            $this->headerUrls = $url;
         }
+
+        return $this;
     }
 
-    public function urls(array $urls)
+    public function event($event)
     {
-        if ($this->type == 'header') {
-            $this->headerUrls = $urls;
-
-            return $this;
-        }
-
         if ($this->type == 'action') {
-            $this->actionUrls = $urls;
-
-            return $this;
+            $this->actionEvents = $event;
+        } else {
+            $this->headerEvents = $event;
         }
+
+        return $this;
+    }
+
+    public function label($label)
+    {
+        $this->label = $label;
+
+        return $this;
     }
 }
