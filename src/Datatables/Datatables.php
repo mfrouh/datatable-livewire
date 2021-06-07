@@ -6,7 +6,6 @@ use MFrouh\DataTable\Datatables\Traits\Handles;
 use MFrouh\DataTable\Datatables\Traits\WithAction;
 use MFrouh\DataTable\Datatables\Traits\WithBuilder;
 use MFrouh\DataTable\Datatables\Traits\WithExport;
-use MFrouh\DataTable\Datatables\Traits\WithImport;
 use MFrouh\DataTable\Datatables\Traits\WithSelection;
 use MFrouh\DataTable\Datatables\Traits\WithSorting;
 use Livewire\WithPagination;
@@ -15,15 +14,15 @@ use Illuminate\Contracts\View\View;
 
 abstract class Datatables extends Component
 {
-    use WithPagination, WithSorting, WithSelection, WithAction, WithImport, WithExport, WithBuilder ,Handles;
+    use WithPagination, WithSorting, WithSelection, WithAction, WithExport, WithBuilder ,Handles;
 
     public string $createId;
 
     public string $tableName = '';
 
-    public array $headerEvents = [];
-
     public array $headerUrls = [];
+
+    public array $headerEvents = [];
 
     public array $tablePermissions = [];
 
@@ -33,6 +32,7 @@ abstract class Datatables extends Component
     {
         return true;
     }
+
     public function queryBuilder()
     {
         return $this->model::query();

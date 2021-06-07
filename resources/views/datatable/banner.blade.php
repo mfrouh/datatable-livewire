@@ -7,14 +7,14 @@
             @can($tablePermissions[$key] ?? null)
                 <button
                     class="p-2 text-white mx-1 bg-blue-700 text-sm rounded-xl shadow-md float-right outline-none focus:outline-none hover:shadow-sm hover:bg-blue-900"
-                    wire:click="{{ $key }}({{ $createId }})">{{ __($event) }}</button>
+                    wire:click="{{ $key }}">{{ __($event) }}</button>
             @endcan
         @endforeach
         @foreach ($headerUrls as $key => $url)
             @can($tablePermissions[$key] ?? null)
                 <button
                     class="p-2 text-white mx-1 bg-blue-700 text-sm rounded-xl shadow-md float-right outline-none focus:outline-none hover:shadow-sm hover:bg-blue-900"
-                    wire:click="{{ $key }}({{ $createId }})">{{ __($url) }}</button>
+                    href="{{ $key }}">{{ __($url) }}</button>
             @endcan
         @endforeach
     </div>

@@ -7,9 +7,9 @@ namespace MFrouh\DataTable\Datatables\Traits;
  */
 trait WithAction
 {
-    public array $actionEvents = [];
+    public array $actionEvents= [];
 
-    public array $actionUrls = [];
+    public array $actionUrls= [];
 
     public array $modals = [];
 

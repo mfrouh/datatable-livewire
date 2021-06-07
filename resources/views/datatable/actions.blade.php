@@ -24,13 +24,13 @@
                     @foreach ($actionEvents as $key => $event)
                         @can($tablePermissions[$key] ?? null)
                             <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition cursor-pointer"
-                                wire:click='{{ $key }}("{{ $item->id }}")'>@lang($event)</a>
+                                wire:click='{{ $event }}'>@lang($key)</a>
                         @endcan
                     @endforeach
                     @foreach ($actionUrls as $key => $url)
                         @can($tablePermissions[$key] ?? null)
                             <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition cursor-pointer"
-                                href="{{ route($key, $item->id) }}">@lang($url)</a>
+                                href="{{ $url }}">@lang($key)</a>
                         @endcan
                     @endforeach
                 </div>

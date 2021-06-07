@@ -21,10 +21,10 @@ trait Handles
     public function handleActions()
     {
         foreach ($this->actions() as  $value) {
-            $value->headerEvents ? $this->headerEvents = $value->headerEvents : '';
-            $value->actionEvents ? $this->actionEvents = $value->actionEvents : '';
-            $value->headerUrls   ? $this->headerUrls   = $value->headerUrls   : '';
-            $value->actionUrls   ? $this->actionUrls   = $value->actionUrls   : '';
+            $value->headerEvents ? $this->headerEvents[$value->label] = $value->headerEvents : '';
+            $value->headerUrls   ? $this->headerUrls[$value->label]   = $value->headerUrls   : '';
+            $value->actionEvents ? $this->actionEvents[$value->label] = $value->actionEvents : '';
+            $value->actionUrls   ? $this->actionUrls[$value->label]   = $value->actionUrls   : '';
         }
     }
 
@@ -85,12 +85,15 @@ trait Handles
 
     public function handleCountPermissions()
     {
-        $arr = [];
-        foreach ($this->actionEvents + $this->actionUrls as $key => $value) {
-            if (auth()->user()->can($this->tablePermissions[$key])) {
-                $arr[] = $value;
+        if (auth()->check()) {
+            $arr = [];
+            foreach ($this->actionEvents + $this->actionUrls as $key => $value) {
+                if (auth()->user()->can($this->tablePermissions[$key])) {
+                    $arr[] = $value;
+                }
             }
+            $this->countActionsPerimssions = count($arr);
         }
-        $this->countActionsPerimssions = count($arr);
+        $this->countActionsPerimssions = 1;
     }
 }
