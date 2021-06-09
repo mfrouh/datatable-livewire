@@ -14,6 +14,8 @@ class Action
 
     public $label;
 
+    public $filename;
+
     public static function header()
     {
         $action = new static;
@@ -46,7 +48,7 @@ class Action
         if ($this->type == 'action') {
             $this->actionEvents = $event;
         } else {
-            $this->headerEvents = $event;
+            $this->headerEvents =  $event;
         }
 
         return $this;
@@ -55,6 +57,13 @@ class Action
     public function label($label)
     {
         $this->label = $label;
+
+        return $this;
+    }
+
+    public function filename($filename)
+    {
+        $this->filename = $filename;
 
         return $this;
     }

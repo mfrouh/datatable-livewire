@@ -21,10 +21,10 @@ trait Handles
     public function handleActions()
     {
         foreach ($this->actions() as  $value) {
-            $value->headerEvents ? $this->headerEvents[$value->label] = $value->headerEvents : '';
-            $value->headerUrls   ? $this->headerUrls[$value->label]   = $value->headerUrls   : '';
-            $value->actionEvents ? $this->actionEvents[$value->label] = $value->actionEvents : '';
-            $value->actionUrls   ? $this->actionUrls[$value->label]   = $value->actionUrls   : '';
+            $value->headerEvents ? $this->headerEvents[$value->label] = $value : '';
+            $value->headerUrls   ? $this->headerUrls[$value->label]   = $value : '';
+            $value->actionEvents ? $this->actionEvents[$value->label] = $value : '';
+            $value->actionUrls   ? $this->actionUrls[$value->label]   = $value : '';
         }
     }
 

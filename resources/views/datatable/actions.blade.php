@@ -24,13 +24,26 @@
                     @foreach ($actionEvents as $key => $event)
                         @can($tablePermissions[$key] ?? null)
                             <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition cursor-pointer"
-                                wire:click='{{ $event }}'>@lang($key)</a>
+                                wire:click='{{ $event->actionEvents }}'>
+                                @if ($event->filename)
+                                    {{ __($event->filename . '.' . $event->label) }}
+                                @else
+                                    {{ __($event->label) }}
+                                @endif
+                            </a>
                         @endcan
                     @endforeach
                     @foreach ($actionUrls as $key => $url)
                         @can($tablePermissions[$key] ?? null)
                             <a class="block px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 transition cursor-pointer"
-                                href="{{ $url }}">@lang($key)</a>
+                                href="{{ $url->actionUrls }}">
+                                {{ dump(str_replace('%3E%3E','', str_replace('%3C%3C','$item->', $url->actionUrls))) }}
+                                @if ($url->filename)
+                                    {{ __($url->filename . '.' . $url->label) }}
+                                @else
+                                    {{ __($url->label) }}
+                                @endif
+                            </a>
                         @endcan
                     @endforeach
                 </div>
